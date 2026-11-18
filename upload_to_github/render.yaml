@@ -1,0 +1,21 @@
+services:
+  - type: worker
+    name: clipsstrim-bot
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: WHISPER_MODEL
+        value: base
+      - key: LLM_ENABLED
+        value: "false"
+      - key: SUBTITLES
+        value: "true"
+      - key: TITLE_COLOR
+        value: white
+      - key: LAYOUT
+        value: top_webcam_bottom_screen
+      - key: MAX_CLIPS
+        value: "3"
